@@ -114,7 +114,7 @@ html, body {
   height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 20px 16px 32px;
+  padding: 20px 16px 80px;
 }
 
 /* Slide Styles */
@@ -857,25 +857,25 @@ html, body {
             </div>
           </div>
           <div class="var-grid">
-            <div class="var-card" style="border-color:#60A5FA;">
-              <div class="var-symbol" style="color:#60A5FA;">x</div>
-              <div class="var-name">入力データ</div>
-              <div class="var-desc">年齢・温度・売上など</div>
+            <div class="var-card" style="border-color:#818CF8;">
+              <div class="var-symbol" style="color:#818CF8;">y</div>
+              <div class="var-name">出力</div>
+              <div class="var-desc">予測結果</div>
             </div>
             <div class="var-card" style="border-color:#34D399;">
               <div class="var-symbol" style="color:#34D399;">a</div>
               <div class="var-name">重み (weight)</div>
               <div class="var-desc">どれだけ影響するか</div>
             </div>
+            <div class="var-card" style="border-color:#60A5FA;">
+              <div class="var-symbol" style="color:#60A5FA;">x</div>
+              <div class="var-name">入力データ</div>
+              <div class="var-desc">年齢・温度・売上など</div>
+            </div>
             <div class="var-card" style="border-color:#F472B6;">
               <div class="var-symbol" style="color:#F472B6;">b</div>
               <div class="var-name">補正 (bias)</div>
               <div class="var-desc">誤りや不足を正し整える</div>
-            </div>
-            <div class="var-card" style="border-color:#818CF8;">
-              <div class="var-symbol" style="color:#818CF8;">y</div>
-              <div class="var-name">出力</div>
-              <div class="var-desc">予測結果</div>
             </div>
           </div>
         </div>
@@ -977,13 +977,13 @@ html, body {
           <div class="slide-title">AIの原理を<br><span class="accent">理解できましたか?</span></div>
           <div class="card" style="border-top:3px solid var(--blue);">
             <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px;">POINT 1</div>
-            <div class="card-label" style="margin-bottom:6px;">単純な計算の大量の組み合わせ</div>
-            <div class="card-body">ほぼすべてのAIモデルは、単純な y = ax + b を大量に組み合わせたものです。</div>
+            <div class="card-label" style="margin-bottom:6px;">a（重み）は学習によって得られるもの</div>
+            <div class="card-body">膨大なデータから「予測→失敗→修正」を繰り返すことで、自動的に最適な値が得られます。</div>
           </div>
           <div class="card" style="border-top:3px solid var(--green);">
             <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px;">POINT 2</div>
-            <div class="card-label" style="margin-bottom:6px;">学習によってパラメータを得る</div>
-            <div class="card-body">a（重み）と b（補正）は人間が決めるのではなく、<strong>学習によって自動的に得られる</strong>ものです。</div>
+            <div class="card-label" style="margin-bottom:6px;">b（補正）は人間の手によっても加えられている</div>
+            <div class="card-body">学習だけでなく、人間が意図的に補正を加えることで、出力の精度や安全性を調整しています。</div>
           </div>
           <div class="highlight-box highlight-blue" style="text-align:center;">
             <div class="hl-title" style="font-size:15px;">この2つが理解できたなら</div>
@@ -992,13 +992,11 @@ html, body {
           <div class="var-grid">
             <div class="info-box" style="text-align:center;">
               <div style="color:var(--red);font-size:16px;margin-bottom:4px;">&#x2716;</div>
-              <div class="info-box-title">NOT REQUIRED</div>
-              <div class="info-box-body">難しい数学やプログラミングの知識</div>
+              <div class="info-box-body" style="font-weight:700;">難しい数学や<br>プログラミングの知識は不要</div>
             </div>
             <div class="info-box" style="text-align:center;">
               <div style="color:var(--green);font-size:16px;margin-bottom:4px;">&#x2714;</div>
-              <div class="info-box-title">ALREADY HAVE</div>
-              <div class="info-box-body">AIを理解するための土台</div>
+              <div class="info-box-body" style="font-weight:700;">AIを理解するための<br>土台はこれだけ</div>
             </div>
           </div>
         </div>
@@ -1012,21 +1010,26 @@ html, body {
           <div class="brain-flow">
             <div class="brain-row">
               <div class="brain-label" style="background:var(--blue);">Input x</div>
-              <div class="brain-text">「明日の会議資料、何ページくらいになりそう?」<br>参加者5名・報告3件・議論1件</div>
+              <div class="brain-text">明日の会議は「<strong>参加者5名、報告事項3件、議論事項1件</strong>」だな</div>
             </div>
             <div class="brain-arrow">&#x25BC;</div>
             <div class="brain-row">
               <div class="brain-label" style="background:var(--green);">Weight a</div>
-              <div class="brain-text">過去の経験から「報告は各1P、議論は1P」と判断</div>
+              <div class="brain-text">以前の会議では「前回は30名で報告事項は各1ページ、議論事項は1ページ、補足資料2ページ」だったな</div>
             </div>
             <div class="brain-arrow">&#x25BC;</div>
             <div class="brain-row">
               <div class="brain-label" style="background:var(--pink);">Bias b</div>
-              <div class="brain-text">今回は5名 → 補足資料は不要（加算 0）</div>
+              <div class="brain-text">明日の会議は少人数だから、補足資料はいらないかな</div>
             </div>
             <div class="brain-arrow">&#x25BC;</div>
-            <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gray-400);padding:4px 0;">3x1 + 1x1 + 0 = 4</div>
-            <div class="brain-result">「4ページです」</div>
+            <div style="background:var(--gray-50);border-radius:10px;padding:12px;margin-top:4px;">
+              <div style="font-size:12px;color:var(--gray-600);line-height:1.8;text-align:center;">
+                報告事項3件 × 1P ＋ 議論事項1件 × 1P<br>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray-400);">3×1 + 1×1 + 0 = 4</span>
+              </div>
+            </div>
+            <div class="brain-result">「4ページだな」</div>
           </div>
           <div class="info-box" style="background:#FFFBEB;border-color:#FDE68A;text-align:center;">
             <div class="info-box-body" style="color:#92400E;font-weight:500;">上記のようなケースを毎日やっていませんか?</div>
@@ -1085,10 +1088,6 @@ html, body {
           <div class="info-box">
             <div class="info-box-title">ChatGPT と GPT の違い</div>
             <div class="info-box-body">ChatGPTはチャットサービスの名称。GPT-3/4/5はその裏で動くAIモデルの名称です。</div>
-          </div>
-          <div class="info-box">
-            <div class="info-box-title">MoE (Mixture-of-Experts)</div>
-            <div class="info-box-body">質問内容に応じて専門のサブモデルを選択的に起動する効率的な仕組みです。</div>
           </div>
         </div>
       </div>
@@ -1149,27 +1148,22 @@ html, body {
             <div class="hl-title">革命的技術：アテンション機能</div>
             <div class="hl-body">Multi-Head Self-Attention が現在の生成AIブームを作り出しました。文脈の中での「単語間の関係性（注目度）」を計算し、人間のような自然な理解を可能にしています。</div>
           </div>
-          <div class="tips-box">
-            <div class="tips-label">TIPS</div>
-            <div class="tips-body">もし誰かに「最近のAIブームすごいよね〜」って聞かれたら、こう答えてみてください。</div>
-            <div class="tips-quote">「アテンション機能って<br>やばいよね〜」</div>
-          </div>
         </div>
       </div>
 
-      <!-- Slide 13: AI用語 & サービス -->
+      <!-- Slide 13: AI用語でよく聞く言葉 -->
       <div class="slide">
         <div class="slide-inner">
-          <div class="slide-tag tag-glossary">GLOSSARY</div>
-          <div class="slide-title">AI用語 & <span class="accent">主要サービス</span></div>
-          
+          <div class="slide-tag tag-glossary">APPENDIX</div>
+          <div class="slide-title">AI用語で<span class="accent">よく聞く言葉</span></div>
+
           <div style="font-size:12px;font-weight:700;color:var(--gray-400);margin-bottom:8px;letter-spacing:0.06em;">重要キーワード</div>
           <div class="glossary-item">
             <div class="glossary-icon" style="background:#DBEAFE;">&#x1F3F7;</div>
             <div>
               <div class="glossary-term">トークン</div>
               <div class="glossary-term-en">Token</div>
-              <div class="glossary-def">AIが文章を処理する際の最小単位。</div>
+              <div class="glossary-def">AIが文章を処理する際の最小単位。単語や文字の一部などを指し、AIはこの単位で理解・生成を行う。</div>
             </div>
           </div>
           <div class="glossary-item">
@@ -1177,7 +1171,7 @@ html, body {
             <div>
               <div class="glossary-term">プロンプト</div>
               <div class="glossary-term-en">Prompt</div>
-              <div class="glossary-def">AIに対する指示や質問のテキスト入力。</div>
+              <div class="glossary-def">AIに対する指示や質問のテキスト入力のこと。具体的で明確なほど、精度の高い回答が得られる。</div>
             </div>
           </div>
           <div class="glossary-item">
@@ -1185,7 +1179,15 @@ html, body {
             <div>
               <div class="glossary-term">コンテキストウィンドウ</div>
               <div class="glossary-term-en">Context Window</div>
-              <div class="glossary-def">AIが一度に記憶・処理できるトークンの上限枠。</div>
+              <div class="glossary-def">AIが一度に記憶・処理できるトークンの上限枠。これを超えると古い情報は忘れられてしまう。</div>
+            </div>
+          </div>
+          <div class="glossary-item">
+            <div class="glossary-icon" style="background:#E0E7FF;">&#x1F4DD;</div>
+            <div>
+              <div class="glossary-term">MDファイル</div>
+              <div class="glossary-term-en">Markdown File</div>
+              <div class="glossary-def">見出し(#)や太字(**)などの書式を記号で記述する軽量テキストファイル。AIとのやり取りでよく利用される。</div>
             </div>
           </div>
 
@@ -1193,17 +1195,17 @@ html, body {
           <div class="service-card" style="border-color:#10B981;">
             <div class="service-name">ChatGPT</div>
             <div class="service-company" style="color:#10B981;">OpenAI</div>
-            <div class="service-desc">生成AIブームの火付け役。自然な対話能力と汎用性の高さが特徴。</div>
+            <div class="service-desc">生成AIブームの火付け役となった万能型AI。自然な対話能力と汎用性の高さが特徴。GPT-3.5/4/4oなどのモデルが搭載されている。</div>
           </div>
           <div class="service-card" style="border-color:#2563EB;">
             <div class="service-name">Gemini</div>
             <div class="service-company" style="color:#2563EB;">Google</div>
-            <div class="service-desc">マルチモーダルAI。画像や音声の処理にも強い。</div>
+            <div class="service-desc">Googleが開発したマルチモーダルAI。テキストだけでなく、画像や音声の処理にも強く、Googleのエコシステムと深く連携している。</div>
           </div>
           <div class="service-card" style="border-color:#D97706;">
             <div class="service-name">Claude</div>
             <div class="service-company" style="color:#D97706;">Anthropic</div>
-            <div class="service-desc">自然な文章生成と高い安全性が特徴。Claude Codeは圧倒的なコーディング性能を持つ。</div>
+            <div class="service-desc">人間らしい自然な文章生成と高い安全性が特徴の高性能AI。特にClaude Codeは、ホワイトカラーを殲滅すると言われるほどの圧倒的なコーディング性能を持つ。</div>
           </div>
         </div>
       </div>
@@ -1228,8 +1230,7 @@ const nextBtn = document.getElementById('nextBtn');
 const dotsContainer = document.getElementById('dots');
 
 const slides = track.children;
-const total = slides.length - 1; // exclude hint
-const slideCount = total;
+const slideCount = slides.length;
 let current = 0;
 let startX = 0;
 let deltaX = 0;
@@ -1259,30 +1260,48 @@ prevBtn.addEventListener('click', () => goTo(current - 1));
 nextBtn.addEventListener('click', () => goTo(current + 1));
 
 // Touch events
+let startY = 0;
+let isHorizontal = null;
+
 viewport.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
   isDragging = true;
-  track.classList.add('dragging');
+  isHorizontal = null;
+  deltaX = 0;
 }, { passive: true });
 
 viewport.addEventListener('touchmove', (e) => {
   if (!isDragging) return;
-  deltaX = e.touches[0].clientX - startX;
-  const offset = -current * viewport.offsetWidth + deltaX;
-  track.style.transform = `translateX(${offset}px)`;
+  const dx = e.touches[0].clientX - startX;
+  const dy = e.touches[0].clientY - startY;
+
+  // Determine direction on first significant move
+  if (isHorizontal === null && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+    isHorizontal = Math.abs(dx) > Math.abs(dy);
+  }
+
+  // Only handle horizontal swipe; let vertical scroll through
+  if (isHorizontal) {
+    deltaX = dx;
+    const offset = -current * viewport.offsetWidth + deltaX;
+    track.style.transform = `translateX(${offset}px)`;
+    track.classList.add('dragging');
+  }
 }, { passive: true });
 
 viewport.addEventListener('touchend', () => {
   if (!isDragging) return;
   isDragging = false;
   track.classList.remove('dragging');
-  if (Math.abs(deltaX) > 50) {
+  if (isHorizontal && Math.abs(deltaX) > 50) {
     if (deltaX < 0) goTo(current + 1);
     else goTo(current - 1);
   } else {
     goTo(current);
   }
   deltaX = 0;
+  isHorizontal = null;
 });
 
 // Keyboard
