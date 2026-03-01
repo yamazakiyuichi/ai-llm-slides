@@ -1193,29 +1193,92 @@ html, body {
         </div>
       </div>
 
-      <!-- Slide 14: 主要AIサービス -->
+      <!-- Slide 14: 主要AIサービスの特徴・料金 -->
       <div class="slide">
         <div class="slide-inner">
           <div class="slide-tag tag-glossary">SERVICES</div>
-          <div class="slide-title">主要<span class="accent">AIサービス</span></div>
+          <div class="slide-title">主要AIサービスの<br><span class="accent">特徴・料金</span></div>
 
-          <div class="service-card" style="border-color:#10B981;">
-            <div class="service-name">ChatGPT</div>
-            <div class="service-company" style="color:#10B981;">OpenAI</div>
-            <div class="service-desc">生成AIブームの火付け役となった万能型AI。自然な対話能力と汎用性の高さが特徴。GPT-3.5/4/4oなどのモデルが搭載されている。</div>
-          </div>
-          <div class="service-card" style="border-color:#2563EB;">
-            <div class="service-name">Gemini</div>
-            <div class="service-company" style="color:#2563EB;">Google</div>
-            <div class="service-desc">Googleが開発したマルチモーダルAI。テキストだけでなく、画像や音声の処理にも強く、Googleのエコシステムと深く連携している。</div>
-          </div>
-          <div class="service-card" style="border-color:#D97706;">
-            <div class="service-name">Claude</div>
-            <div class="service-company" style="color:#D97706;">Anthropic</div>
-            <div class="service-desc">人間らしい自然な文章生成と高い安全性が特徴の高性能AI。特にClaude Codeは、ホワイトカラーを殲滅すると言われるほどの圧倒的なコーディング性能を持つ。</div>
+          <!-- ChatGPT -->
+          <div class="card" style="border-left:4px solid #10B981;margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div>
+                <div style="font-size:15px;font-weight:700;">ChatGPT</div>
+                <div style="font-size:10px;font-weight:700;color:#10B981;">OpenAI</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--gray-600);line-height:1.6;margin-bottom:10px;">
+              <strong style="color:var(--gray-800);">自然な対話が得意</strong> ― 会話の流れを作る、相談・壁打ちに最適<br>
+              <strong style="color:var(--gray-800);">汎用性が高い</strong> ― 幅広い用途に対応する"万能型"
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#F0FDF4;color:#15803D;font-weight:700;">Free $0</span>
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#DBEAFE;color:#1D4ED8;font-weight:700;">Plus $20</span>
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#F3E8FF;color:#7C3AED;font-weight:700;">Pro $200</span>
+            </div>
+            <div style="font-size:10px;color:var(--gray-400);line-height:1.6;margin-top:6px;">
+              Free: GPT-5.2限定、各機能に上限あり<br>
+              Plus: 高度推論、画像生成、Deep Research、メモリ拡大<br>
+              Pro: Pro推論、無制限利用、Agent/Research最大
+            </div>
           </div>
 
-          <div style="font-size:12px;font-weight:700;color:var(--gray-400);margin:16px 0 8px;letter-spacing:0.06em;">機能比較</div>
+          <!-- Gemini -->
+          <div class="card" style="border-left:4px solid #2563EB;margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div>
+                <div style="font-size:15px;font-weight:700;">Gemini</div>
+                <div style="font-size:10px;font-weight:700;color:#2563EB;">Google</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--gray-600);line-height:1.6;margin-bottom:10px;">
+              <strong style="color:var(--gray-800);">マルチモーダルが得意</strong> ― テキストだけでなく画像・音声なども扱える<br>
+              <strong style="color:var(--gray-800);">Google連携が強い</strong> ― Googleのエコシステムと深く統合
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#F0FDF4;color:#15803D;font-weight:700;">Free ¥0</span>
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#DBEAFE;color:#1D4ED8;font-weight:700;">Plus ¥1,200</span>
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#F3E8FF;color:#7C3AED;font-weight:700;">Pro ¥2,900</span>
+            </div>
+            <div style="font-size:10px;color:var(--gray-400);line-height:1.6;margin-top:6px;">
+              Free: Geminiアプリ基本機能（画像/Live/Canvas等）<br>
+              Plus: 強力モデル、動画生成、Google連携、200GB<br>
+              Pro: 1000クレジット、上位動画、Code Assist、2TB
+            </div>
+          </div>
+
+          <!-- Claude -->
+          <div class="card" style="border-left:4px solid #D97706;margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div>
+                <div style="font-size:15px;font-weight:700;">Claude</div>
+                <div style="font-size:10px;font-weight:700;color:#D97706;">Anthropic</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--gray-600);line-height:1.6;margin-bottom:10px;">
+              <strong style="color:var(--gray-800);">自然な文章生成が得意</strong> ― 読みやすい文章、丁寧な言い回し、安全性重視<br>
+              <strong style="color:var(--gray-800);">コーディング性能が強い</strong> ― 特にClaude Codeが強力とされる
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#F0FDF4;color:#15803D;font-weight:700;">Free $0</span>
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#DBEAFE;color:#1D4ED8;font-weight:700;">Pro $20</span>
+              <span style="font-size:10px;padding:4px 8px;border-radius:6px;background:#F3E8FF;color:#7C3AED;font-weight:700;">Max $100~</span>
+            </div>
+            <div style="font-size:10px;color:var(--gray-400);line-height:1.6;margin-top:6px;">
+              Free: Web/Mobile、テキスト/画像解析、基本機能<br>
+              Pro: 利用量増、Claude Code、無制限Pj、Excel連携<br>
+              Max: Proの5-20倍、出力増、先行機能、PPT連携(preview)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 15: 機能比較表 -->
+      <div class="slide">
+        <div class="slide-inner">
+          <div class="slide-tag tag-glossary">COMPARISON</div>
+          <div class="slide-title">機能<span class="accent">比較</span></div>
+
           <div class="card" style="padding:0;overflow:hidden;">
             <table style="width:100%;border-collapse:collapse;font-size:12px;">
               <thead>
@@ -1228,39 +1291,42 @@ html, body {
               </thead>
               <tbody>
                 <tr style="border-bottom:1px solid var(--gray-100);">
-                  <td style="padding:10px 8px;font-weight:500;">対話能力</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CE;</td>
+                  <td style="padding:10px 8px;font-weight:500;">対話・汎用性</td>
+                  <td style="padding:10px 6px;text-align:center;"><span style="font-size:16px;color:#10B981;">&#x25CE;</span><br><span style="font-size:9px;color:var(--gray-400);">自然・万能</span></td>
                   <td style="padding:10px 6px;text-align:center;font-size:16px;color:#2563EB;">&#x25CB;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#D97706;">&#x25CE;</td>
-                </tr>
-                <tr style="background:var(--gray-50);border-bottom:1px solid var(--gray-100);">
-                  <td style="padding:10px 8px;font-weight:500;">コーディング</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CB;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#2563EB;">&#x25CB;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#D97706;">&#x25CE;</td>
-                </tr>
-                <tr style="border-bottom:1px solid var(--gray-100);">
-                  <td style="padding:10px 8px;font-weight:500;">文章生成</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CE;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#2563EB;">&#x25CB;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#D97706;">&#x25CE;</td>
-                </tr>
-                <tr style="background:var(--gray-50);border-bottom:1px solid var(--gray-100);">
-                  <td style="padding:10px 8px;font-weight:500;">マルチモーダル</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CE;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#2563EB;">&#x25CE;</td>
                   <td style="padding:10px 6px;text-align:center;font-size:16px;color:#D97706;">&#x25CB;</td>
                 </tr>
-                <tr>
-                  <td style="padding:10px 8px;font-weight:500;">安全性</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CB;</td>
+                <tr style="background:var(--gray-50);border-bottom:1px solid var(--gray-100);">
+                  <td style="padding:10px 8px;font-weight:500;">文章・安全性</td>
+                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CE;</td>
                   <td style="padding:10px 6px;text-align:center;font-size:16px;color:#2563EB;">&#x25CB;</td>
-                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#D97706;">&#x25CE;</td>
+                  <td style="padding:10px 6px;text-align:center;"><span style="font-size:16px;color:#D97706;">&#x25CE;</span><br><span style="font-size:9px;color:var(--gray-400);">丁寧・安全</span></td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--gray-100);">
+                  <td style="padding:10px 8px;font-weight:500;">コーディング</td>
+                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CE;</td>
+                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#2563EB;">&#x25CB;</td>
+                  <td style="padding:10px 6px;text-align:center;"><span style="font-size:16px;color:#D97706;">&#x25CE;</span><br><span style="font-size:9px;color:var(--gray-400);">Claude Code</span></td>
+                </tr>
+                <tr>
+                  <td style="padding:10px 8px;font-weight:500;">マルチモーダル</td>
+                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#10B981;">&#x25CB;</td>
+                  <td style="padding:10px 6px;text-align:center;"><span style="font-size:16px;color:#2563EB;">&#x25CE;</span><br><span style="font-size:9px;color:var(--gray-400);">画像/動画/音声</span></td>
+                  <td style="padding:10px 6px;text-align:center;font-size:16px;color:#D97706;">&#x25CB;</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div style="font-size:10px;color:var(--gray-400);margin-top:8px;text-align:right;">&#x25CE; 非常に優れている　&#x25CB; 優れている　&#x25B3; 普通</div>
+          <div style="font-size:10px;color:var(--gray-400);margin-top:8px;text-align:right;">&#x25CE; 非常に優れている　&#x25CB; 優れている</div>
+
+          <div class="highlight-box highlight-dark" style="margin-top:16px;">
+            <div class="hl-title" style="font-size:13px;">まとめ</div>
+            <div class="hl-body" style="font-size:12px;line-height:1.8;">
+              <strong style="color:#34D399;">ChatGPT</strong> ― 万能型。迷ったらまずこれ<br>
+              <strong style="color:#60A5FA;">Gemini</strong> ― Google連携 &amp; マルチモーダルに強い<br>
+              <strong style="color:#FBBF24;">Claude</strong> ― 文章・コード・安全性に特化
+            </div>
+          </div>
         </div>
       </div>
 
