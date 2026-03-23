@@ -1,0 +1,41 @@
+name: 朝の天気確認（川崎市幸区）
+
+on:
+  schedule:
+    # 毎朝 6:00 JST (= 21:00 UTC 前日)
+    - cron: '0 21 * * *'
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  check-weather:
+    name: 天気確認
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Claude CLI をインストール
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: 今日の天気を確認
+        id: weather
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          DATE=$(TZ=Asia/Tokyo date +"%Y年%m月%d日")
+          RESULT=$(claude --print "今日（${DATE}）の川崎市幸区の天気を調べて、以下の形式で日本語で簡潔に教えてください：
+          - 天気概況（晴れ/曇り/雨 など）
+          - 最高気温・最低気温
+          - 降水確率
+          - 風速・風向き
+          - 一言アドバイス（傘が必要か、服装のヒントなど）")
+          echo "result<<EOF" >> $GITHUB_OUTPUT
+          echo "$RESULT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: サマリーに出力
+        run: |
+          DATE=$(TZ=Asia/Tokyo date +"%Y年%m月%d日")
+          echo "## 🌤️ 朝の天気確認 — $DATE" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**場所:** 川崎市幸区" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.weather.outputs.result }}" >> $GITHUB_STEP_SUMMARY
